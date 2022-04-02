@@ -84,6 +84,7 @@ def viewcustomers():
     mycollection = db.Customers
     for x in mycollection.find({}):
         pprint.pprint(x)
+        print(" ")
     main()
 #2 view Customers ends here
 #3 view Products start here
@@ -96,6 +97,7 @@ def viewproducts():
     mycollection = db.Products
     for x in mycollection.find({}):
         pprint.pprint(x)
+        print(" ")
     main()
 #3 view Products ends here
 #4 Place an order starts here
@@ -155,6 +157,7 @@ def customerorders():
     mycollection2 =db.Orders
     for x in mycollection.find({}):
         pprint.pprint(x)
+        print("  ")
     #id = input("Find the customer's ID above to retrieve his orders")
 
     import re
@@ -173,6 +176,7 @@ def customerorders():
             print("these are the customer's orders")
             for x in mycollection2.find({"Customer ID":{"$eq":number}}):
                 pprint.pprint(x)
+                print("  ")
     main()
 
    
@@ -265,6 +269,7 @@ def deleteanorder():
     mycollection = db.Orders
     for x in mycollection.find({}):
         print(x)
+        print("  ")
     import re
     flag = True
     input_value = None
@@ -295,6 +300,7 @@ def updatecustomer():
         
         for x in collection.find():
             pprint.pprint(x)
+            print("  ")
         id = input("Type the customer's ID to update the information")
         number = int(id)
         kustomer = input("Type the Customer's Company name to be updated   ")    
